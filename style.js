@@ -95,3 +95,92 @@ function displayError(message){
   card.style.display = "flex";
   card.appendChild(errorDisplay);
 }
+
+var currentHour = new Date().getHours();
+
+// Select the body element
+var body = document.querySelector('body');
+var button = document.getElementById('dynamic-button');
+var input = document.getElementById('myInput');
+var style = document.createElement('style');
+
+// Change background based on time
+if (currentHour >= 6 && currentHour < 11) {
+  body.style.backgroundImage = "url('morning.jpg')";
+
+  button.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+
+  style.innerHTML = "::placeholder { color: white; }"; // Change 'blue' to the desired placeholder text color
+  document.head.appendChild(style);
+  
+ input.style.color  = "white";
+ input.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+  
+ button.addEventListener('mouseover', function() {
+      button.style.background = "linear-gradient(to right, #FFA500 0%, #FF8C00 100%)";
+    });
+button.addEventListener('mouseout', function() {
+button.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+    }); 
+
+} 
+
+else if (currentHour >= 11 && currentHour < 16) {
+      body.style.backgroundImage = "url('afternoon3.jpg')";
+      
+  button.style.background =  "linear-gradient(to right, #B0E0E6 0%, #87CEEB 50%, #4682B4 100%)";
+  
+  style.innerHTML = "::placeholder { color: white; }"; // Change 'blue' to the desired placeholder text color
+  document.head.appendChild(style);
+
+input.style.color  = "white";
+input.style.background = "linear-gradient(to right, #B0E0E6 0%, #87CEEB 50%, #4682B4 100%)";
+
+      button.addEventListener('mouseover', function() {
+          button.style.background = "linear-gradient(to right, #87CEEB 0%, #B0E0E6 50%, #87CEEB 100%)";
+        });
+    button.addEventListener('mouseout', function() {
+    button.style.background = "linear-gradient(to right, #B0E0E6 0%, #87CEEB 50%, #4682B4 100%)";
+        }); 
+
+}
+
+
+else if(currentHour >= 16 && currentHour < 18) {
+  body.style.backgroundImage = "url('evening.jpg')";
+  
+  button.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+  
+  style.innerHTML = "::placeholder { color: white; }"; // Change 'blue' to the desired placeholder text color
+  document.head.appendChild(style);
+
+  input.style.color  = "white";
+  input.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+
+  button.addEventListener('mouseover', function() {
+      button.style.background =  "linear-gradient(to right, #FFA500 0%, #FF8C00 100%)";
+    });
+button.addEventListener('mouseout', function() {
+button.style.background = "linear-gradient(to right, #FFA500 0%, #FFD700 100%)";
+    }); 
+
+}
+
+else{
+ body.style.backgroundImage = "url('night2.jpg')";
+ 
+ button.style.background = "linear-gradient(to right, #333 0%, #333 50%, #666 100%)";
+button.style.color="darkgrey";
+ style.innerHTML = "::placeholder { color: grey; }"; // Change 'blue' to the desired placeholder text color
+ document.head.appendChild(style);
+
+ input.style.color  = "grey";
+ input.style.background = "linear-gradient(to right, #333 0%, #333 50%, #666 100%)";
+
+ button.addEventListener('mouseover', function() {
+      button.style.background = "linear-gradient(to right, #222 0%, #333 50%, #666 100%)";
+    });
+button.addEventListener('mouseout', function() {
+button.style.background = "linear-gradient(to right, #333 0%, #333 50%, #666 100%)";
+    }); 
+}
